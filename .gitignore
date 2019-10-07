@@ -1,3 +1,9 @@
+#data
+samples
+
+#Jetbrains
+.idea
+
 
 ignore this files when commit.
 

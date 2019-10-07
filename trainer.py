@@ -147,7 +147,8 @@ class Trainer(object):
                 # Compute gradient penalty
                 alpha = torch.rand(real_images.size(0), 1, 1, 1).to(self.device).expand_as(real_images)
                 interpolated = Variable(alpha * real_images.data + (1 - alpha) * fake_images.data, requires_grad=True)
-                out = self.D(interpolated)
+                # out = self.D(interpolated)
+                out = self.D(interpolated, z_class)
 
                 grad = torch.autograd.grad(outputs=out,
                                            inputs=interpolated,
