@@ -4,7 +4,7 @@ from trainer import Trainer
 # from tester import Tester
 from data_loader import Data_Loader
 from torch.backends import cudnn
-from utils import make_folder
+from utils import make_folder, generate_gif
 
 import glob
 import os
@@ -39,7 +39,12 @@ def main(config):
     #     tester = Tester(data_loader.loader(), config)
     #     tester.test()
 
+
+
+
+
 if __name__ == '__main__':
     config = get_parameters()
     print(config)
-    main(config)
+    generate_gif('./samples/sagan_1/')
+    # main(config)
